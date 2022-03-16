@@ -29,33 +29,24 @@ public class P5Main extends PApplet{
     }
     @Override
     public void setup(){
-
-
         for(int i = 0;i<cols;i++)
         {
             for(int j = 0;j<rows;j++){
                 rect(i*size,j*size,size,size);
-                //line(i*50+20,j*50+25,0,0);
             }
         }
     }
 
     @Override
     public void draw(){
-
         while(table.neighborsLeft(grid)){
             String from = next.fromDir();
             eraseWall(from);
             while(table.hasNeighbors(grid, next))
             {
-
-                //System.out.println(" " + next.i + "" + next.j);
                 from = next.fromDir();
                 eraseWall(from);
-
                 next = table.random(grid,grid[next.i][next.j]);
-//stroke(255,0,0);
-//line(next.ifrom*size+size/2,next.jfrom*size+size/2,next.i*size+size/2,next.j*size+size/2);
                 from = next.fromDir();
                 eraseWall(from);
             }
@@ -67,13 +58,6 @@ public class P5Main extends PApplet{
             next.j = j;
             next.ifrom = ifrom;
             next.jfrom = jfrom;
-/*
-next.i = grid[grid[next.i][next.j].ifrom][grid[next.i][next.j].jfrom].i;
-next.j = grid[grid[next.i][next.j].ifrom][grid[next.i][next.j].jfrom].j;
-next.ifrom = grid[grid[next.i][next.j].ifrom][grid[next.i][next.j].jfrom].ifrom;
-next.jfrom = grid[grid[next.i][next.j].ifrom][grid[next.i][next.j].jfrom].jfrom;
-*/
-
         }
     }
 
