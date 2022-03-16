@@ -1,4 +1,4 @@
 # Random-Maze-Generator
 Creates a randomly generated maze
 
-Uses processing for the graphics
+Must include core.jar in order for processing to work as the gui
